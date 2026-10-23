@@ -194,7 +194,7 @@ public class JuegoEstrategicoTactico {
         Ejercito ganador = sa.size() > 0 ? a : (sb.size() > 0 ? b : null);
         if (ganador != null) {
             ganador.mover(a.getFila(), a.getColumna());
-            // El ejército vencedor ocupa la posición del encuentro.
+            // El vencedor ocupa la posición del encuentro.
             if (ganador == b) ganador.mover(a.getFila(), a.getColumna());
             System.out.println("Ejército que queda en el tablero: " + ganador.getNombre());
         }
@@ -206,7 +206,7 @@ public class JuegoEstrategicoTactico {
         int poderA = poder(a), poderB = poder(b);
         System.out.println("Poder total " + a.size() + " soldados: " + poderA);
         System.out.println("Poder total " + b.size() + " soldados: " + poderB);
-        // La métrica es la suma de vida actual más ataque y defensa de cada soldado.
+       
         if (poderA >= poderB) {
             System.out.println("Gana el primer ejército porque su poder total es mayor o igual.");
             b.clear();
@@ -224,7 +224,7 @@ public class JuegoEstrategicoTactico {
     }
 
     private void batallaTactica(ArrayList<Soldado> a, ArrayList<Soldado> b) {
-        // Cada ronda se enfrenta el primer soldado de cada ejército.
+        // Cada ronda se enfrenta el primer soldado 
         while (!a.isEmpty() && !b.isEmpty()) {
             Soldado s1 = a.get(0), s2 = b.get(0);
             System.out.println("\\nDuelo: " + s1);
